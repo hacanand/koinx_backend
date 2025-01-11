@@ -1,5 +1,6 @@
 const express = require("express");
 const Crypto = require("../models/Crypto");
+const connectDB = require("../config/db");
 
 const router = express.Router();
 
@@ -11,6 +12,7 @@ router.get("/stats", async (req, res) => {
   }
 
   try {
+    connectDB();
     const latestData = await Crypto.findOne({ coin }).sort({ timestamp: -1 });
     if (!latestData) {
       return res

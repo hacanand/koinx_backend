@@ -1,6 +1,7 @@
 const express = require("express");
 const calculateSD = require("../utils/calculateSD");
 const Crypto = require("../models/Crypto");
+const connectDB = require("../config/db");
 
 const router = express.Router();
 
@@ -11,7 +12,8 @@ router.get("/deviation", async (req, res) => {
     return res.status(400).json({ error: "Coin is required" });
   }
 
-  try {
+    try {
+      connectDB();
     const records = await Crypto.find({ coin })
       .sort({ timestamp: -1 })
       .limit(100);
