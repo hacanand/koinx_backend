@@ -5,9 +5,7 @@ const fetchCryptoData = async () => {
   const coins = ["bitcoin", "matic-network", "ethereum"];
   try {
     const { data } = await axios.get(
-      `https://api.coingecko.com/api/v3/simple/price?ids=${coins.join(
-        ","
-      )}&vs_currencies=usd&include_market_cap=true&include_24hr_change=true`
+      `https://api.coingecko.com/api/v3/simple/price?ids=${coins.join(",")}&vs_currencies=usd&include_market_cap=true&include_24hr_change=true`
     );
 
     const cryptoData = coins.map((coin) => ({

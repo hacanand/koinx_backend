@@ -1,6 +1,6 @@
 const express = require("express");
-const Crypto = require("../models/Crypto");
 const calculateSD = require("../utils/calculateSD");
+const Crypto = require("../models/Crypto");
 
 const router = express.Router();
 

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "env": {
+    "MONGO_URI": "mongodb+srv://anandpromax:18MfRkpkOC2ZAaAP@cluster0.zkbct.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "PORT": "3000"
+  }
+}
